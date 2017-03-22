@@ -8,6 +8,9 @@ class WindowSetting(sublime_plugin.EventListener):
         window = view.window()
         settings = view.settings()
 
+        if settings.get('is_widget'):
+            return
+
         show_tabs = settings.get('show_tabs')
         show_minimap = settings.get('show_minimap')
         show_status_bar = settings.get('show_status_bar')
